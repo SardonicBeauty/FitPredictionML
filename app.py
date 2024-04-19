@@ -13,7 +13,7 @@ fit_i_mapping = {
 
 @app.route('/')
 def home_page():
-    return render_template('index.html')
+    return render_template('main.html')
 
 @app.route('/predict', methods=['POST', "GET"])
 def predict_datapoint(): 
@@ -22,10 +22,10 @@ def predict_datapoint():
     else: 
         data = CustomData(
             weight=int(request.form.get('weight')),
-            category=str(request.form.get('category')),
             size=int(request.form.get("size")), 
             age=int(request.form.get("age")), 
             height=float(request.form.get("height")),
+            category=request.form.get('category'),
             body_type=request.form.get("body_type"), 
         )
         new_data = data.get_data_as_dataframe()

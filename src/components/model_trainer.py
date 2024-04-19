@@ -4,6 +4,9 @@ import sys
 import os
 from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor 
+from sklearn.svm import SVR
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.neural_network import MLPRegressor
 from sklearn.tree import DecisionTreeRegressor
 from src.logger import logging 
 from src.exception import CustomException 
@@ -34,7 +37,10 @@ class ModelTrainer():
                 "ElasticNet": ElasticNet(),
                 "DecisionTree": DecisionTreeRegressor(),
                 "RandomForest": RandomForestRegressor(),
-                "GradientBoosting": GradientBoostingRegressor()
+                "GradientBoosting": GradientBoostingRegressor(),
+                "SVR": SVR(),
+                "KNeighborsRegressor": KNeighborsRegressor(),
+                "MLPRegressor": MLPRegressor()
             }
             model_report: dict = model_performance(X_train, y_train, X_test, y_test, models)
 

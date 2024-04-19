@@ -1,4 +1,5 @@
-This is a FitPrediction model, where with the measurements how it will suit on an individual will be predicted. 
+This is a FitPrediction model, where with the measurements given it would determine how a clothing will suit on an individual. 
+
 
 
 
@@ -55,6 +56,17 @@ src -->
     exception.py
     logger.py
     utils.py
+
+templates -->
+        main.html
+        result.html
+
+app.py
+database.py
+eda.ipynb
+README.md
+requirements.txt
+setup.py
 
 ```
 

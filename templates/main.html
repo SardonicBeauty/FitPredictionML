@@ -1,18 +1,89 @@
 <html>
+  <head>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+  
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+
+        p{
+          text-align: center;
+        }
+
+
+    .form-container {
+       
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    select {
+        width: calc(100% - 22px); /* Adjusting width to account for padding and borders */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    </style>
+  </head>
 <body>
+<div class="container">
+    <h1>FIT PREDICTION MODEL</h1>
+    <p>This is a project for ThirdEye data.</p>
+
+    <h2>Project Details</h2>
+    <p>This is a model that will predict if a piece of clothing will fit an individual or not.</p>
+</div>
+<div class="form-container">
 <form action="{{url_for('predict_datapoint')}}" method="POST">
     <div class="form-group">
-        <label for="Weight">Weight:</label>
+        <label for="Weight">Weight (lbs):</label>
         <input type="text" id="weight" name="weight" placeholder="Enter your weight (in lbs)">
     </div>
 
     <div class="form-group">
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" placeholder="Enter the category of clothing to wear ">
-    </div>
-
-    <div class="form-group">
-        <label for="size">Size:</label>
+        <label for="size">Size (1-40):</label>
         <input type="text" id="size" name="size" placeholder="Enter the siz (between 1-40)">
     </div>
   
@@ -22,8 +93,8 @@
     </div>
   
     <div class="form-group">
-        <label for="height">Height:</label>
-        <input type="text" id="height" name="height" placeholder="Enter height here (in feet) (e.g 5.6)">
+        <label for="height">Height (in feet):</label>
+        <input type="text" id="height" name="height" placeholder="(e.g 5.6)">
     </div>         
   
 <div class="form-group">
@@ -39,12 +110,77 @@
   </select>
 </div>
   
-
-
-
-
+<div class="form-group">
+  <label for="category">Category:</label>
+  <select id="category" name="category">
+    <option value="dress">dress</option>
+    <option value="shirt">shirt</option>
+    <option value="buttondown">buttondown</option>
+    <option value="ballgown">ballgown</option>
+    <option value="peacoat">peacoat</option>
+    <option value="gown">gown</option>
+    <option value="tank">tank</option>
+    <option value="pant">pant</option>
+    <option value="t-shirt">t-shirt</option>
+    <option value="sweatpants">sweatpants</option>
+    <option value="vest">vest</option>
+    <option value="jogger">jogger</option>
+    <option value="knit">knit</option>
+    <option value="sweatshirt">sweatshirt</option>
+    <option value="trousers">Trousers</option>
+    <option value="leggings">leggings</option>
+    <option value="crewneck">crewneck</option>
+    <option value="parka">parka</option>
+    <option value="cardigan">cardigan</option>
+    <option value="midi">midi</option>
+    <option value="shift">shift</option>
+    <option value="top">top</option>
+    <option value="tight">tight</option>
+    <option value="hoodie">hoodie</option>
+    <option value="jumpsuit">jumpsuit</option>
+    <option value="shirtdress">shirtdress</option>
+    <option value="culotte">culotte</option>
+    <option value="tee">tee</option>
+    <option value="for">for</option>
+    <option value="mini">mini</option>
+    <option value="turtleneck">turtleneck</option>
+    <option value="skirt">skirt</option>
+    <option value="suit">suit</option>
+    <option value="jeans">jeans</option>
+    <option value="sheath">sheath</option>
+    <option value="print">print</option>
+    <option value="tunic">tunic</option>
+    <option value="jacket">jacket</option>
+    <option value="sweater">sweater</option>
+    <option value="kaftan">kaftan</option>
+    <option value="blazer">blazer</option>
+    <option value="blouse">blouse</option>
+    <option value="overalls">overallst</option>
+    <option value="trouser">trouser</option>
+    <option value="culottes">culottes</option>
+    <option value="romper">romper</option>
+    <option value="caftan">caftan</option>
+    <option value="coat">coat</option>
+    <option value="skort">skort</option>
+    <option value="trench">trench</option>
+    <option value="cape">cape</option>
+    <option value="bomber">bomber</option>
+    <option value="pullover">pullover</option>
+    <option value="blouson">blouson</option>
+    <option value="frock">frock</option>
+    <option value="duster">duster</option>
+    <option value="maxi">maxi</option>
+    <option value="combo">combo</option>
+    <option value="kimono">kimono</option>
+    <option value="cami">cami</option>
+    <option value="poncho">poncho</option>
+    <option value="overcoat">overcoat</option>
+  </select>
+</div>
+ 
 <div style="clear:both;"></div>
   <input type="submit" value="Submit">
 </form>
+</div>
 </body>
 </html>
